@@ -14,6 +14,6 @@ angular.module('animalfarm')
   .state('dogs', {url: '/dogs', templateUrl: '/views/dogs/dogs.html', abstract: true})
   .state('dogs.new', {url: '/new', templateUrl: '/views/dogs/dogs-new.html', controller: 'DogsNewCtrl'})
   .state('dogs.list', {url: '', templateUrl: '/views/dogs/dogs-list.html', controller: 'DogsListCtrl'})
-  .state('dogs.show', {url: '/{dog}', templateUrl: '/views/dogs/dogs-show.html', controller: 'DogsShowCtrl'});
+  .state('dogs.show', {url: '/{dogId}', templateUrl: '/views/dogs/dogs-show.html', controller: 'DogsShowCtrl'});
 
 });

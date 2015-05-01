@@ -1,0 +1,17 @@
+h3 Dogs
+
+table.table.table-striped
+  thead
+    tr
+      th Name
+      th Age
+      th Sex
+      th Photo
+  tbody
+    tr(ng-repeat='dog in dogs')
+      td: a.btn.btn-info.btn-xs(ui-sref='dogs.show({dogId:dog._id})') Show
+      td {{dog.name}}
+      td {{dog.age}}
+      td {{dog.sex}}
+      td: img(ng-src='{{dog.photo}}', height='100')
+      td: button.button.btn-xs.btn-danger(ng-click='destroy(dog)') Kill Dog

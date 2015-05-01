@@ -12,8 +12,18 @@ angular.module('animalfarm')
   Dog.prototype.save = function(){
     return $http.post(nodeUrl + '/dogs', this);
   };
-
   
+  Dog.destroy = function(dogId){
+    return $http.delete(nodeUrl + '/dogs/' + dogId);
+  };
+
+  Dog.find = function(){
+    return $http.get(nodeUrl + '/dogs');
+  };
+  
+  Dog.findById = function(dogId){
+    return $http.get(nodeUrl + '/dogs/' + dogId);
+  };
   
   
   return Dog;
