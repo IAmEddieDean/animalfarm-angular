@@ -14,4 +14,5 @@ table.table.table-striped
       td {{dog.age}}
       td {{dog.sex}}
       td: img(ng-src='{{dog.photo}}', height='100')
+      td: a.btn.btn-xs.btn-warning(ui-sref='dogs.edit({dogId:dog._id})') Edit Dog
       td: button.button.btn-xs.btn-danger(ng-click='destroy(dog)') Kill Dog

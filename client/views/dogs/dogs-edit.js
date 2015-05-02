@@ -1,10 +1,13 @@
 'use strict';
 
 angular.module('animalfarm')
-.controller('DogsNewCtrl', function($scope, Dog, $state, $window){
+.controller('DogsEditCtrl', function($scope, Dog, $state, $window){
+  Dog.findById($state.params.dogId)
+  .then(function(response){
+    $scope.dog = response.data;
+  });
   $scope.save = function(obj){
-    var dog = new Dog(obj);
-    dog.save()
+    Dog.saveChange(obj._id, obj)
     .then(function(){
       $state.go('dogs.list');
     })

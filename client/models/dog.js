@@ -13,6 +13,11 @@ angular.module('animalfarm')
     return $http.post(nodeUrl + '/dogs', this);
   };
   
+  Dog.saveChange = function(dogId, dog){
+    
+    return $http.put(nodeUrl + '/dogs/' + dogId + '/edit', dog);
+  };
+  
   Dog.destroy = function(dogId){
     return $http.delete(nodeUrl + '/dogs/' + dogId);
   };
